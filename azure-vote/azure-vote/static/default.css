@@ -1,9 +1,9 @@
-/* Importamos una fuente moderna para darle mejor aspecto */
+/* Importamos la fuente moderna */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
 
 body {
-    /* Fondo oscuro con un degradado sutil y moderno */
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    /* Fondo negro abisal con un degradado sutil hacia azul oscuro y morado oscuro */
+    background: radial-gradient(circle at top left, #0b0f19 0%, #000000 50%, #120822 100%);
     background-attachment: fixed;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
@@ -16,22 +16,16 @@ body {
 }
 
 div#container {
-    /* Efecto "cristal" (Glassmorphism) para la tarjeta principal */
-    background: rgba(255, 255, 255, 0.05);
+    /* Efecto de cristal oscuro, SIN animación de entrada para evitar el reseteo visual */
+    background: rgba(15, 15, 25, 0.7);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(138, 43, 226, 0.2);
+    border-radius: 16px;
+    /* Resplandor envolvente mezclando azul y morado */
+    box-shadow: 0 0 40px rgba(0, 210, 255, 0.1), inset 0 0 20px rgba(138, 43, 226, 0.05);
     padding: 40px;
-    margin-top: 0; /* Centrado con flexbox en el body */
-    animation: fadeIn 1s ease-out;
-}
-
-/* Pequeña animación al cargar la página */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
+    margin-top: 0;
 }
 
 div#space {
@@ -46,15 +40,17 @@ div#logo {
     margin: 0 auto;
     width: 100%;
     text-align: center;
-    font-size: 40px;
+    font-size: 42px;
     font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    /* Texto con degradado */
-    background: linear-gradient(to right, #00f2fe, #4facfe);
+    letter-spacing: 4px;
+    /* Degradado épico de Azul a Morado para el texto */
+    background: linear-gradient(90deg, #00d2ff 0%, #8a2be2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    /* Un ligero resplandor detrás de las letras */
+    filter: drop-shadow(0px 0px 8px rgba(138, 43, 226, 0.4));
 }
 
 div#form {
@@ -65,9 +61,9 @@ div#form {
     max-width: 500px;
     text-align: center;
     font-size: 24px;
-    /* Separadores translúcidos */
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Líneas separadoras con colores combinados */
+    border-top: 1px solid rgba(138, 43, 226, 0.3);
+    border-bottom: 1px solid rgba(0, 210, 255, 0.3);
 }
 
 div#results {
@@ -75,71 +71,77 @@ div#results {
     margin: 20px auto 0;
     width: 100%;
     text-align: center;
-    font-size: 28px;
-    font-weight: 600;
-    color: #e0e0e0;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    font-size: 32px;
+    font-weight: 800;
+    color: #e0d4ff;
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
 }
 
 /* Estilo base para todos los botones */
 .button {
-    background-color: transparent;
-    border: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente oscuro */
     color: white;
-    padding: 15px 30px;
+    padding: 16px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    margin: 10px;
-    border-radius: 50px; /* Botones redondeados estilo píldora */
+    margin: 12px 8px;
+    border-radius: 8px; /* Bordes ligeramente redondeados, más modernos */
     cursor: pointer;
-    width: 220px;
-    transition: all 0.3s ease;
+    width: 230px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    /* Transición suave para todos los efectos */
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Botón 1 (Opción A): Neón Azul/Cyan */
+/* Animación genial al hacer clic (efecto de hundirse) */
+.button:active {
+    transform: scale(0.92);
+}
+
+/* Botón 1 (Opción A): Neón Azul Cian */
 .button1 {
-    color: #00f2fe;
-    border: 2px solid #00f2fe;
-    box-shadow: 0 0 10px rgba(0, 242, 254, 0.2), inset 0 0 10px rgba(0, 242, 254, 0.1);
+    border: 2px solid #00d2ff;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
 }
 
+/* Animación al pasar el ratón */
 .button1:hover {
-    background-color: #00f2fe;
+    background-color: #00d2ff;
     color: #000;
-    box-shadow: 0 0 20px rgba(0, 242, 254, 0.8), 0 0 40px rgba(0, 242, 254, 0.4);
-    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 210, 255, 0.8), 0 0 50px rgba(0, 210, 255, 0.4);
+    transform: translateY(-5px); /* Se levanta un poco */
 }
 
-/* Botón 2 (Reset): Neón Verde/Blanco */
+/* Botón 2 (Reset): Neón Morado Oscuro/Neutro */
 .button2 {
-    color: #b3ffab;
-    border: 2px solid #b3ffab;
-    box-shadow: 0 0 10px rgba(179, 255, 171, 0.2), inset 0 0 10px rgba(179, 255, 171, 0.1);
+    border: 2px solid #5a2e98;
+    color: #b589ff;
+    box-shadow: 0 0 10px rgba(90, 46, 152, 0.2);
 }
 
+/* Animación al pasar el ratón */
 .button2:hover {
-    background-color: #b3ffab;
-    color: #000;
-    box-shadow: 0 0 20px rgba(179, 255, 171, 0.8), 0 0 40px rgba(179, 255, 171, 0.4);
-    transform: translateY(-3px) scale(1.05);
-}
-
-/* Botón 3 (Opción B): Neón Rojo/Rosa */
-.button3 {
-    color: #ff0844;
-    border: 2px solid #ff0844;
-    box-shadow: 0 0 10px rgba(255, 8, 68, 0.2), inset 0 0 10px rgba(255, 8, 68, 0.1);
-}
-
-.button3:hover {
-    background-color: #ff0844;
+    background-color: #5a2e98;
     color: #fff;
-    box-shadow: 0 0 20px rgba(255, 8, 68, 0.8), 0 0 40px rgba(255, 8, 68, 0.4);
-    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 0 25px rgba(90, 46, 152, 0.8), 0 0 50px rgba(90, 46, 152, 0.4);
+    transform: translateY(-5px);
+}
+
+/* Botón 3 (Opción B): Neón Morado Brillante / Magenta */
+.button3 {
+    border: 2px solid #bc13fe;
+    box-shadow: 0 0 10px rgba(188, 19, 254, 0.2);
+}
+
+/* Animación al pasar el ratón */
+.button3:hover {
+    background-color: #bc13fe;
+    color: #fff;
+    box-shadow: 0 0 25px rgba(188, 19, 254, 0.8), 0 0 50px rgba(188, 19, 254, 0.4);
+    transform: translateY(-5px);
 }
