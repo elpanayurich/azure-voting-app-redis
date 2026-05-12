@@ -1,96 +1,145 @@
+/* Importamos una fuente moderna para darle mejor aspecto */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
 body {
-    background-color:#F8F8F8;
+    /* Fondo oscuro con un degradado sutil y moderno */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 div#container {
-    margin-top:5%;
+    /* Efecto "cristal" (Glassmorphism) para la tarjeta principal */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 40px;
+    margin-top: 0; /* Centrado con flexbox en el body */
+    animation: fadeIn 1s ease-out;
+}
+
+/* Pequeña animación al cargar la página */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 div#space {
-    display:block;
+    display: block;
     margin: 0 auto;
-    width: 500px;
-    height: 10px;
- 
+    width: 100%;
+    height: 20px;
 }
 
 div#logo {
-    display:block;
+    display: block;
     margin: 0 auto;
-    width: 500px;
+    width: 100%;
     text-align: center;
-    font-size:30px;
-    font-family:Helvetica;  
-    /*border-bottom: 1px solid black;*/   
+    font-size: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    /* Texto con degradado */
+    background: linear-gradient(to right, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
 }
 
 div#form {
-    padding: 20px;
-    padding-right: 20px;
-    padding-top: 20px;
-    display:block;
+    padding: 30px;
+    display: block;
     margin: 0 auto;
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     text-align: center;
-    font-size:30px;
-    font-family:Helvetica;  
-    border-bottom: 1px solid black;
-    border-top: 1px solid black;
+    font-size: 24px;
+    /* Separadores translúcidos */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 div#results {
-    display:block;
-    margin: 0 auto;
-    width: 500px;
+    display: block;
+    margin: 20px auto 0;
+    width: 100%;
     text-align: center;
-    font-size:30px;
-    font-family:Helvetica;  
+    font-size: 28px;
+    font-weight: 600;
+    color: #e0e0e0;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
+/* Estilo base para todos los botones */
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: transparent;
     border: none;
     color: white;
-    padding: 16px 32px;
+    padding: 15px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    margin: 10px;
+    border-radius: 50px; /* Botones redondeados estilo píldora */
     cursor: pointer;
-    width: 250px;
+    width: 220px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* Botón 1 (Opción A): Neón Azul/Cyan */
 .button1 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #008CBA;
+    color: #00f2fe;
+    border: 2px solid #00f2fe;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.2), inset 0 0 10px rgba(0, 242, 254, 0.1);
 }
 
 .button1:hover {
-    background-color: #008CBA;
-    color: white;
+    background-color: #00f2fe;
+    color: #000;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.8), 0 0 40px rgba(0, 242, 254, 0.4);
+    transform: translateY(-3px) scale(1.05);
 }
+
+/* Botón 2 (Reset): Neón Verde/Blanco */
 .button2 {
-    background-color: white;
-    color: black;
-    border: 2px solid #555555;
+    color: #b3ffab;
+    border: 2px solid #b3ffab;
+    box-shadow: 0 0 10px rgba(179, 255, 171, 0.2), inset 0 0 10px rgba(179, 255, 171, 0.1);
 }
 
 .button2:hover {
-    background-color: #555555;
-    color: white;
+    background-color: #b3ffab;
+    color: #000;
+    box-shadow: 0 0 20px rgba(179, 255, 171, 0.8), 0 0 40px rgba(179, 255, 171, 0.4);
+    transform: translateY(-3px) scale(1.05);
 }
 
+/* Botón 3 (Opción B): Neón Rojo/Rosa */
 .button3 {
-    background-color: white; 
-    color: black; 
-    border: 2px solid #f44336;
+    color: #ff0844;
+    border: 2px solid #ff0844;
+    box-shadow: 0 0 10px rgba(255, 8, 68, 0.2), inset 0 0 10px rgba(255, 8, 68, 0.1);
 }
 
 .button3:hover {
-    background-color: #f44336;
-    color: white;
+    background-color: #ff0844;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(255, 8, 68, 0.8), 0 0 40px rgba(255, 8, 68, 0.4);
+    transform: translateY(-3px) scale(1.05);
 }
